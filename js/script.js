@@ -7,17 +7,41 @@
 // Document Ready Function. All of your jQuery should go in here. 
 $( document ).ready(function() {
   
+	 $("#button").click(function(){
+        var message = $("input").val();
+        var Userinput = ay(message)
+     $("#result").text(Userinput);
+     $("#result").empty();
+      var words= message.split(" ");
+      
+     for (var i=0; i < words.length; i++) {
+      	$("#result").append(ay(words[i]));
+     }
+     
+	 });
+     
+    function ay(words) {
+    	 var firstL = words.slice(0,1);
+         var lastL  = words.slice(1,words.length);
+         
+     if (firstL === "a" || firstL === "e" || firstL === "i" || firstL === "o" || firstL === "u"){
+       return (words + "yay")
+      }
+       else {
+        return(lastL + firstL + "ay")
+       }
+ 
+ 
+      return words + "ay";
+      
+    }
 
-
-
+  
+   
 });
 
 
 // Create the wordToPigLatin function that takes a word as a parameter and returns a transfromed word. 
-
-
-
-
 
 
 // Create the sentenceToPigLatin function that takes a sentence as a parameter
